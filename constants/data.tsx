@@ -61,6 +61,50 @@ export const codeQuestImages = [
 
 export const data = [
   {
+    id: 6,
+    title: "2026 – Present",
+    subtitle: "Part-time Job at Marokko Biz",
+    projectName: "MarokkoBiz – Corporate Website",
+    description:
+      "Built and maintain the corporate website for Marokko Biz of 31.01.12 S.A.R.L, a Danish-owned company operating in Morocco since 2012. The site showcases the company's network across real estate investment, securities trading, IT development, and recruitment, featuring team profiles, job listings, and a contact system.",
+    link: "https://marokkobiz.com",
+    images: [],
+  },
+
+  {
+    id: 7,
+    title: "2025 – Present",
+    subtitle: "Part-time Job at Marokko Biz",
+    projectName: "De-Bail – Rental Contracts Platform",
+    description:
+      "Developed a platform for creating professional, legally compliant rental contracts for residential and commercial properties in Morocco. Features include multi-language support (EN/FR/AR), court-ready PDF generation, secure storage, and full compliance with Moroccan rental laws. Trusted by 500+ Moroccan landlords.",
+    link: "https://de-bail.com",
+    images: [],
+  },
+
+  {
+    id: 8,
+    title: "2026 – Present",
+    subtitle: "Part-time Job at Marokko Biz",
+    projectName: "Marokko Biz TV – Streaming Platform",
+    description:
+      "Built a live TV streaming platform featuring multi-language support (EN/FR/AR), a channel lineup including Yahoo Finance, CNN, Bloomberg, and NBC News, plus an archive section and news/ad management dashboard for content publishing.",
+    link: "https://marokkobiztv.com/test",
+    images: [],
+  },
+
+  {
+    id: 9,
+    title: "2026 – Present",
+    subtitle: "Part-time Job at Marokko Biz",
+    projectName: "MarocLoi – Legal Research Platform",
+    description:
+      "Developed a professional legal research platform for Moroccan legislation. Features include searching across 16,000+ indexed articles from 200+ legal sources, official bulletin metadata, legal texts with version tracking, multi-language support (EN/FR/AR), and direct links to original official documents.",
+    link: "https://marocloi.com/test",
+    images: [],
+  },
+
+  {
     id: 1,
     title: "Dec – 2024",
     subtitle: "Academic Project",
@@ -68,6 +112,7 @@ export const data = [
     description:
       "Collaborated with colleagues to build CodeQuest, a Java-based desktop application designed for computer science education. The platform enables professors to create and manage programming problems, while students can solve and test their code directly inside the app. CodeQuest enhances hands-on learning by helping students strengthen their problem-solving and coding skills.",
     images: codeQuestImages,
+    link: "https://github.com/Mohamed-Slaoui/java-quiz-app"
   },
 
   {

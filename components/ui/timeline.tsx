@@ -1,11 +1,12 @@
 "use client";
+import { isGithubLink } from "@/lib/utils";
 import { useScroll, useTransform, motion, AnimatePresence } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
 interface ImageEntry { src: string; type: "mobile" | "desktop"; }
 interface TimelineEntry {
   id: number; title: string; subtitle: string; projectName: string;
-  description: string; images: ImageEntry[];
+  description: string; images: ImageEntry[]; link?: string;
 }
 
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
@@ -71,8 +72,18 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 >
                   View Project Details
                 </motion.button>
-                <span className="text-xs md:text-sm text-neutral-500 dark:text-neutral-400">{item.images.length} screenshots available</span>
-              </div>
+                {/* <span className="text-xs md:text-sm text-neutral-500 dark:text-neutral-400">{item.images.length} screenshots available</span> */}
+                {item.link && (
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cursor-pointer rounded-full border border-neutral-300 dark:border-neutral-700 px-5 py-2.5 text-sm md:text-base font-medium text-neutral-700 dark:text-neutral-200 hover:bg-neutral-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all no-underline"
+                  >
+                    {isGithubLink(item.link)} ↗
+                  </a>
+                )}
+                </div>
             </div>
           </motion.div>
         ))}
@@ -128,7 +139,17 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                     </motion.button>
                   </div>
                   <p className="mt-7 text-base md:text-lg leading-relaxed text-neutral-700 max-w-3xl">{project.description}</p>
-                  <div className="mt-10 border-t border-neutral-200 pt-7">
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block mt-6 underline underline-offset-4 text-neutral-700 hover:text-black transition-colors"
+                    >
+                      {project.link} ↗
+                    </a>
+                  )}
+                  { project.images.length > 0 && <div className="mt-10 border-t border-neutral-200 pt-7">
                     <h3 className="text-lg md:text-xl font-semibold text-neutral-900">Project Gallery</h3>
                     <div className="mt-4 flex flex-wrap gap-4 md:gap-5 justify-start">
                       {project.images.map((img) => (
@@ -146,7 +167,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                         </div>
                       ))}
                     </div>
-                  </div>
+                  </div>}
                 </div>
               );
             })()}

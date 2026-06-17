@@ -5,3 +5,10 @@ import { twMerge } from "tailwind-merge"
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
+
+export function isGithubLink(link: string): string {
+  if (link.includes("github.com")) {
+    return "GitHub Repository";
+  }
+  return "Visit Website";
+}
